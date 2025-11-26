@@ -62,6 +62,21 @@ function App() {
     yoqoch("O'chirish")
   }
 
+  const [assalom, alik] = useState([
+  { title: "salomlar", id: 1 },
+  { title: "salomlar", id: 2 },
+  { title: "salomlar", id: 3 }
+]);
+
+const deletee = (id) => {
+  alik((pre) => {
+    return pre.filter((event) => {
+      return event.id !== id;
+    });
+  });
+};
+
+
   return (
     <div className="App">
       <h1>{matn}</h1>
@@ -91,8 +106,18 @@ function App() {
         <div style={{padding: olcham, backgroundColor: "blue"}}>
         <button onClick={olchamalmash}>Ozgarish </button>
         </div>
+        
+        <div>
+          {assalom.map((sat) => {
+            return (
+              <div key={sat.id}>
+                <h1>{sat.title}</h1>
+                <button onClick={() => deletee(sat.id)}>ochir</button>
+              </div>
+            );
+          })}
+        </div>
 
- 
       </div>
 
     </div>
