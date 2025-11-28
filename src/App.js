@@ -1,8 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import { use, useState } from 'react';
+import Salom from "./copy.js"
+import Alik from './companents.js';
+import Counter from './counter.js';
 
 function App() {
+
+  
 
     const [matn, setMatn] = useState("Assalomu aleykum");
   function matnniAlmashtir(){
@@ -79,6 +83,9 @@ const deletee = (id) => {
 
   return (
     <div className="App">
+      <Salom/>
+      <Alik name="Kamoladdin"/>
+      <Counter/>
       <h1>{matn}</h1>
       <button onClick={matnniAlmashtir}>Matnni almashtir</button>
       <div style={{backgroundColor: rang, padding: "40px"}}>
